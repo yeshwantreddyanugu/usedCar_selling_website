@@ -45,7 +45,7 @@ const About = () => {
               <span className="text-gradient">Pre-Owned Cars</span>
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              With over a decade of experience in the automotive industry, AutoElite has become 
+              With over a decade of experience in the automotive industry, Pooja's Cars has become 
               a trusted name for quality pre-owned vehicles. We believe everyone deserves to drive 
               a reliable car without breaking the bank.
             </p>

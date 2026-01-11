@@ -28,7 +28,7 @@ const Header = () => {
               <Car className="w-6 h-6 text-primary-foreground" />
             </div>
             <span className="font-display text-xl font-bold text-foreground group-hover:text-primary transition-colors">
-              AutoElite
+              Pooja's Cars
             </span>
           </a>
 

@@ -27,7 +27,7 @@ const Footer = () => {
               <div className="w-10 h-10 rounded-lg accent-gradient flex items-center justify-center">
                 <Car className="w-6 h-6 text-primary-foreground" />
               </div>
-              <span className="font-display text-xl font-bold text-foreground">AutoElite</span>
+              <span className="font-display text-xl font-bold text-foreground">Pooja's Cars</span>
             </a>
             <p className="text-muted-foreground text-sm max-w-xs">
               Your trusted destination for premium pre-owned vehicles. Quality, transparency, 
@@ -73,7 +73,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-border text-center">
           <p className="text-muted-foreground text-sm">
-            © {currentYear} AutoElite. All rights reserved.
+            © {currentYear} Pooja's Cars. All rights reserved.
           </p>
         </div>
       </div>

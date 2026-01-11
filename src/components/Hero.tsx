@@ -10,6 +10,16 @@ const Hero = () => {
     { icon: Clock, label: "Years Experience", value: "10+" },
   ];
 
+  const scrollToContact = () => {
+    const element = document.querySelector('#contact');
+    element?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollToInventory = () => {
+    const element = document.querySelector('#inventory');
+    element?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section id="home" className="relative min-h-screen flex items-center hero-gradient overflow-hidden">
       {/* Background Image with Overlay */}
@@ -43,18 +53,36 @@ const Hero = () => {
             </h1>
 
             <p className="text-lg text-muted-foreground max-w-lg">
-              Discover our handpicked collection of quality used cars. Each vehicle is thoroughly inspected 
+              Discover our handpicked collection of quality used cars. Each vehicle is thoroughly inspected
               and certified for your peace of mind.
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <Button variant="hero" size="xl">
-                View Inventory
-                <ArrowRight className="w-5 h-5" />
-              </Button>
-              <Button variant="heroOutline" size="xl">
-                Contact Us
-              </Button>
+              {/* Primary Button - Now scrolls to #inventory */}
+              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                <Button 
+                  variant="hero" 
+                  size="xl"
+                  onClick={scrollToInventory}
+                  className="group"
+                >
+                  View Inventory
+                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
+                </Button>
+              </motion.div>
+
+              {/* Contact Button */}
+              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                <Button 
+                  variant="heroOutline" 
+                  size="xl"
+                  onClick={scrollToContact}
+                  className="group"
+                >
+                  Contact Us
+                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
+                </Button>
+              </motion.div>
             </div>
 
             {/* Stats */}
@@ -64,10 +92,11 @@ const Hero = () => {
                   key={stat.label}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
+                  whileHover={{ y: -4, scale: 1.02 }}
                   transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-                  className="text-center"
+                  className="text-center p-4 rounded-lg hover:bg-secondary/50 cursor-pointer transition-all duration-200"
                 >
-                  <stat.icon className="w-6 h-6 text-primary mx-auto mb-2" />
+                  <stat.icon className="w-8 h-8 text-primary mx-auto mb-3" />
                   <div className="font-display text-2xl font-bold text-foreground">{stat.value}</div>
                   <div className="text-sm text-muted-foreground">{stat.label}</div>
                 </motion.div>
@@ -75,7 +104,7 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* Right Content - Empty for hero image overlay effect */}
+          {/* Right Content */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -95,9 +124,15 @@ const Hero = () => {
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 1.5, repeat: Infinity }}
-          className="w-6 h-10 rounded-full border-2 border-muted-foreground flex items-start justify-center pt-2"
+          className="w-6 h-10 rounded-full border-2 border-muted-foreground flex items-start justify-center pt-2 hover:border-primary transition-colors duration-200 cursor-pointer"
+          onClick={scrollToContact}
+          whileHover={{ scale: 1.1 }}
         >
-          <div className="w-1.5 h-3 rounded-full bg-primary" />
+          <motion.div 
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+            className="w-1.5 h-3 rounded-full bg-primary"
+          />
         </motion.div>
       </motion.div>
     </section>
